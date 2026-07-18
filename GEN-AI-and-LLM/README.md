@@ -8,16 +8,15 @@ Welcome to the **Generative AI & Large Language Models** section of GOKZ StudyHu
 - 📄 PDF Notes
 - 📚 Question Banks
 - 📝 Assignments
-- 🔗 Drive Links
 - 📖 Additional Resources
 
 ---
 
 ## 📥 Download
 
-📦 **GEN-AI-and-LLM-Materials.zip**
+📦 **GEN AI & LLM (Professional Elective).zip**
 
-> Click the ZIP file in this folder to download all resources.
+> **Note:** GitHub cannot preview large ZIP files. Click the ZIP file above and then click **Download** to get the complete study materials.
 
 ---
 
