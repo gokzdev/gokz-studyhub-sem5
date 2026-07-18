@@ -1,13 +1,28 @@
-# 2302AS503 - Big Data Frameworks
+# 📚 2302AS503 - Big Data Frameworks
 
-Welcome to the **Big Data Frameworks** section.
+Welcome to the **Big Data Frameworks** section of **GOKZ StudyHub**.
 
-## Available Resources in drive link.
+## 📖 Subject Information
 
-- 📄 PDF Notes
-- 📚 Question Banks
-- 🔗 Drive Links
-- 📂 Additional Resources
+- **Subject Code:** 2302AS503
+- **Subject Name:** Big Data Frameworks
+
+---
+
+## 📥 Study Materials
+
+All available study materials are provided through the Google Drive link below.
+
+🔗 **Complete Materials:**
+(https://drive.google.com/drive/folders/1y5eOzJ3ZAK3WrRupkUG6Q0MDEnsISgMV)
+
+---
+
+## 📚 Available Resources
+
+- ✅ PDF Notes
+- ✅ Question Banks
+- ✅ Additional Resources
 
 ---
 
