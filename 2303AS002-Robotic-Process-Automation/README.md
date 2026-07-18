@@ -1,19 +1,18 @@
-# 🤖 2303AS002 - Robotic Process Automation
+# 🤖 2303AS002 - Robotic Process Automation Lab
 
-Welcome to the **Robotic Process Automation** section of GOKZ StudyHub.
+Welcome to the **Robotic Process Automation Lab** section.
 
-## 📂 Available Resources
+## 📥 Study Materials
 
-- 📄 PDF Notes
-- 📚 Question Banks
-- 🔗 Drive Links
-- 📖 Additional Resources
+### Complete Materials
+
+🔗 https://drive.google.com/drive/folders/1baTRk-MH0PGLDNh-UJjxGUgoLq-Ivt1K
 
 ---
 
-## 📌 Status
+## 📌 Available Resources
 
-🟢 Available
+- ✅ Complete Lab Materials (Google Drive)
 
 ---
 
