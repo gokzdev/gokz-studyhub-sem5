@@ -1,19 +1,29 @@
-# 💻 Programming with Large Datasets Laboratory
+# 🗄️ Programming with Large Datasets
 
-Welcome to the **Programming with Large Datasets Laboratory** section of GOKZ StudyHub.
+Welcome to the **Programming with Large Datasets** section of GOKZ StudyHub.
 
 ## 📂 Available Resources
 
-- 🧪 Lab Manual
+- 📦 Complete Study Materials (ZIP)
+- 📄 PDF Notes
 - 💻 Programs
-- 📷 Outputs
-- 📄 Additional Resources
+- 📚 Question Banks
+- 📝 Assignments
+- 🔗 Drive Links
+
+---
+
+## 📥 Download
+
+📦 **Programming with Large Datasets.zip**
+
+> **Note:** GitHub cannot preview large ZIP files. Click the ZIP file in this folder and then click **Download** to get all study materials.
 
 ---
 
 ## 📌 Status
 
-🟡 Coming Soon
+🟢 Available
 
 ---
 
