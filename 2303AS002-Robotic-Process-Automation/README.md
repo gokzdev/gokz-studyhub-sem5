@@ -1,18 +1,18 @@
-# 🤖 2303AS002 - Robotic Process Automation Lab
+# 🤖 2303AS002 - Robotic Process Automation
 
-Welcome to the **Robotic Process Automation Lab** section.
+Welcome to the **Robotic Process Automation** section.
 
 ## 📥 Study Materials
 
 ### Complete Materials
 
-🔗 https://drive.google.com/drive/folders/1baTRk-MH0PGLDNh-UJjxGUgoLq-Ivt1K
+🔗https://drive.google.com/drive/folders/1baTRk-MH0PGLDNh-UJjxGUgoLq-Ivt1K
 
 ---
 
 ## 📌 Available Resources
 
-- ✅ Complete Lab Materials (Google Drive)
+- ✅ Complete Study Materials (Google Drive)
 
 ---
 
