@@ -58,14 +58,11 @@ line-height:1.7;
 .buttons{
 display:flex;
 flex-direction:column;
-gap:14px;
+gap:18px;
 }
 
 .btn{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
+display:block;
 padding:15px;
 text-decoration:none;
 background:#3b82f6;
@@ -81,20 +78,8 @@ transform:translateY(-3px);
 box-shadow:0 8px 20px rgba(59,130,246,.35);
 }
 
-.btn.secondary{
-background:rgba(255,255,255,.08);
-color:#fff;
-border:1px solid rgba(255,255,255,.1);
-}
-
-.btn.secondary:hover{
-background:rgba(255,255,255,.15);
-box-shadow:0 8px 20px rgba(255,255,255,.05);
-}
-
 .back{
 background:#334155;
-margin-top:10px;
 }
 
 .back:hover{
@@ -117,37 +102,27 @@ font-size:14px;
 <h1>📊 Programming with Large Datasets</h1>
 
 <p>
-Access the laboratory resources, study materials, and program code repository.
+Download the complete study materials, including PDF notes, program files, question banks, lab assignments and additional resources.
 </p>
 
 <div class="buttons">
 
-  <!-- Link directly to specific files or subfolders inside this directory -->
-  <a class="btn secondary" href="PDF-Notes/">
-    📄 PDF Notes
-  </a>
+<!-- Make sure the filename below exactly matches the zip file inside this folder -->
+<a class="btn"
+href="Programming-with-Large-Datasets-Laboratory.zip"
+download>
+📦 Download Complete Study Materials (ZIP)
+</a>
 
-  <a class="btn secondary" href="Programs/">
-    💻 Program Source Code
-  </a>
-
-  <a class="btn secondary" href="Assignments/">
-    📝 Lab Assignments
-  </a>
-
-  <a class="btn secondary" href="Question-Banks/">
-    📚 Question Banks
-  </a>
-
-  <!-- Back button to return to root -->
-  <a class="btn back" href="../index.html">
-    ⬅ Back to Home
-  </a>
+<a class="btn back"
+href="../index.html">
+⬅ Back to Home
+</a>
 
 </div>
 
 <div class="info">
-Status: Operational ✅
+Version: Available ✅
 </div>
 
 </div>
