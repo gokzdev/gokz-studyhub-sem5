@@ -2,267 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOKZ CineHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>GOKZ StudyHub</title>
+
+    <!-- External stylesheet fallback -->
+    <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Embedded Netflix Style CSS to guarantee it loads perfectly -->
+    <!-- Embedded Mobile & Dark Mode Fixes -->
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Sora', sans-serif;
         }
-
-        body {
-            background-color: #0b0f19 !important;
+        /* Forces the dark theme on mobile even if style.css fails to load */
+        html, body {
+            background-color: #0f172a !important; 
             color: #ffffff !important;
+            font-family: 'Sora', sans-serif;
             min-height: 100vh;
-            padding-bottom: 40px;
         }
-
-        header {
-            text-align: center;
-            padding: 40px 20px 20px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #e50914; /* Netflix Red Accent */
-            letter-spacing: -1px;
-        }
-
-        header p {
-            color: #94a3b8;
-            margin-top: 5px;
-        }
-
-        .search-container {
+        /* Basic mobile responsive constraints for card layouts */
+        .cards {
             display: flex;
-            justify-content: center;
-            padding: 0 20px 30px;
-        }
-
-        #movieSearch {
+            flex-direction: column;
+            gap: 16px;
+            padding: 16px;
             width: 100%;
-            max-width: 500px;
-            padding: 14px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            font-size: 16px;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        #movieSearch:focus {
-            border-color: #e50914;
-            box-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
-        }
-
-        .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 24px;
-            padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        .movie-card {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 2 / 3;
-            background: #1e293b;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        @media (min-width: 768px) {
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
         }
-
-        .movie-card:hover {
-            transform: scale(1.05);
-            z-index: 5;
+        
+        /* Specific Netflix styling overrides for the movie card */
+        .cine-card {
+            border: 1px solid rgba(229, 9, 20, 0.2) !important;
         }
-
-        .poster {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: filter 0.3s;
-        }
-
-        /* Fixed Overlay Architecture */
-        .card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(11, 15, 25, 1) 15%, rgba(11, 15, 25, 0.8) 65%, rgba(0,0,0,0.3) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 3;
-        }
-
-        .movie-card:hover .card-overlay {
-            opacity: 1;
-        }
-
-        .movie-card:hover .poster {
-            filter: blur(3px) brightness(0.4);
-        }
-
-        .movie-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .cine-btn {
+            background-color: #e50914 !important;
             color: #ffffff !important;
         }
-
-        .movie-info {
-            font-size: 13px;
-            color: #cbd5e1 !important;
-            margin-bottom: 12px;
-        }
-
-        .badge {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: #3b82f6;
-            color: #fff !important;
-            padding: 4px 8px;
-            font-size: 10px;
-            font-weight: 800;
-            border-radius: 6px;
-            z-index: 4;
-        }
-
-        .badge.neon-red {
-            background: #e50914;
-        }
-
-        .download-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-            background: #e50914;
-            color: #fff !important;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
-            border-radius: 8px;
-            transition: 0.2s;
-        }
-
-        .download-btn:hover {
-            background: #ff1f2a;
-        }
-
-        .back-home-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #1e293b;
-            color: #fff !important;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
-        }
-
-        .back-home-btn:hover {
-            background: #334155;
-            border-color: #fff;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px 0;
-            color: #475569;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .movie-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                gap: 12px;
-            }
+        .cine-btn:hover {
+            background-color: #ff1f2a !important;
+            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4) !important;
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>🍿 GOKZ CineHub</h1>
-        <p>My Ultimate Movie Stash</p>
-    </header>
+<header style="padding: 30px 20px; text-align: center;">
+    <h1>📚 GOKZ StudyHub</h1>
+    <p style="color: #cbd5e1; margin-top: 5px;">Semester 5 • AI & DS</p>
+</header>
 
-    <section class="search-container">
-        <input type="text" id="movieSearch" placeholder="🔍 Search movies or genres..." onkeyup="filterMovies()">
-    </section>
+<section class="hero" style="padding: 0 20px 20px; text-align: center;">
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 Search subjects..."
+        style="width: 100%; max-width: 500px; padding: 14px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #fff; font-family: inherit;"
+    >
+</section>
 
-    <!-- Netflix Visual Grid -->
-    <main class="movie-grid">
+<section class="cards">
 
-        <!-- Movie 1 -->
-        <div class="movie-card" data-title="interstellar sci-fi space christopher nolan">
-            <span class="badge">1080p</span>
-            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=500" alt="Interstellar" class="poster">
-            <div class="card-overlay">
-                <h3 class="movie-title">Interstellar</h3>
-                <p class="movie-info">Sci-Fi • 2014</p>
-                <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="download-btn">🚀 Download</a>
-            </div>
-        </div>
+<div class="card">
+    <h2>📊 Big Data Frameworks</h2>
+    <p>Notes, ZIP Files & Resources</p>
+    <a href="2302AS503-Big-Data-Frameworks/" class="btn">Open</a>
+</div>
 
-        <!-- Movie 2 -->
-        <div class="movie-card" data-title="demon slayer anime action animation">
-            <span class="badge neon-red">4K UHD</span>
-            <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=500" alt="Demon Slayer" class="poster">
-            <div class="card-overlay">
-                <h3 class="movie-title">Demon Slayer</h3>
-                <p class="movie-info">Anime • Action</p>
-                <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank" class="download-btn">🚀 Download</a>
-            </div>
-        </div>
+<div class="card">
+    <h2>🤖 Robotic Process Automation</h2>
+    <p>Study Materials</p>
+    <a href="2303AS002-Robotic-Process-Automation/" class="btn">Open</a>
+</div>
 
-    </main>
+<div class="card">
+    <h2>🧪 RPA Lab</h2>
+    <p>Programs & Manuals</p>
+    <a href="Robotic-Process-Automation-Lab/" class="btn">Open</a>
+</div>
 
-    <!-- Back Navigation Button -->
-    <div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
-        <a href="../index.html" class="back-home-btn">⬅ Back to StudyHub</a>
-    </div>
+<div class="card">
+    <h2>🧠 GEN AI & LLM</h2>
+    <p>Complete ZIP Resources</p>
+    <a href="GEN-AI-and-LLM/" class="btn">Open</a>
+</div>
 
-    <footer>
-        Made with ❤️ by <b>GOKZ</b>
-    </footer>
+<div class="card">
+    <h2>🗄️ Programming with Large Datasets</h2>
+    <p>Notes & Programs</p>
+    <a href="Programming-with-Large-Datasets-Laboratory/" class="btn">Open</a>
+</div>
 
-    <script>
-        function filterMovies() {
-            let input = document.getElementById('movieSearch').value.toLowerCase();
-            let cards = document.getElementsByClassName('movie-card');
-            for (let i = 0; i < cards.length; i++) {
-                let titleAttr = cards[i].getAttribute('data-title');
-                if (titleAttr.includes(input)) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+<!-- 🍿 GOKZ CINEHUB ENTERTAINMENT CARD -->
+<div class="card cine-card">
+    <h2>🍿 GOKZ CineHub</h2>
+    <p>Favorite Movies & Download Links</p>
+    <a href="GokzCineHub/" class="btn cine-btn">Go to Hub</a>
+</div>
+
+</section>
+
+<footer style="text-align: center; padding: 40px 20px; color: #94a3b8;">
+    Made with ❤️ by <b>GOKZ</b>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
