@@ -2,103 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>GOKZ StudyHub</title>
 
+    <!-- External stylesheet fallback -->
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Embedded Mobile & Dark Mode Fixes -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        /* Forces the dark theme on mobile even if style.css fails to load */
+        html, body {
+            background-color: #0f172a !important; 
+            color: #ffffff !important;
+            font-family: 'Sora', sans-serif;
+            min-height: 100vh;
+        }
+        /* Basic mobile responsive constraints for card layouts */
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 16px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-
+<header style="padding: 30px 20px; text-align: center;">
     <h1>📚 GOKZ StudyHub</h1>
-
-    <p>Semester 5 • AI & DS</p>
-
+    <p style="color: #cbd5e1; margin-top: 5px;">Semester 5 • AI & DS</p>
 </header>
 
-<section class="hero">
-
-<input
-type="text"
-id="search"
-placeholder="🔍 Search subjects..."
->
-
+<section class="hero" style="padding: 0 20px 20px; text-align: center;">
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 Search subjects..."
+        style="width: 100%; max-width: 500px; padding: 14px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #fff; font-family: inherit;"
+    >
 </section>
 
 <section class="cards">
 
 <div class="card">
-<h2>📊 Big Data Frameworks</h2>
-<p>Notes, ZIP Files & Resources</p>
-
-<a href="2302AS503-Big-Data-Frameworks/" class="btn">
-Open
-</a>
-
+    <h2>📊 Big Data Frameworks</h2>
+    <p>Notes, ZIP Files & Resources</p>
+    <a href="2302AS503-Big-Data-Frameworks/" class="btn">Open</a>
 </div>
 
 <div class="card">
-<h2>🤖 Robotic Process Automation</h2>
-<p>Study Materials</p>
-
-<a href="2303AS002-Robotic-Process-Automation/" class="btn">
-Open
-</a>
-
+    <h2>🤖 Robotic Process Automation</h2>
+    <p>Study Materials</p>
+    <a href="2303AS002-Robotic-Process-Automation/" class="btn">Open</a>
 </div>
 
 <div class="card">
-
-<h2>🧪 RPA Lab</h2>
-
-<p>Programs & Manuals</p>
-
-<!-- Link fixed to route inside the dedicated lab folder -->
-<a href="Robotic-Process-Automation-Lab/" class="btn">
-Open
-</a>
-
+    <h2>🧪 RPA Lab</h2>
+    <p>Programs & Manuals</p>
+    <a href="Robotic-Process-Automation-Lab/" class="btn">Open</a>
 </div>
 
 <div class="card">
-
-<h2>🧠 GEN AI & LLM</h2>
-
-<p>Complete ZIP Resources</p>
-
-<a href="GEN-AI-and-LLM/" class="btn">
-Open
-</a>
-
+    <h2>🧠 GEN AI & LLM</h2>
+    <p>Complete ZIP Resources</p>
+    <a href="GEN-AI-and-LLM/" class="btn">Open</a>
 </div>
 
 <div class="card">
-
-<h2>🗄️ Programming with Large Datasets</h2>
-
-<p>Notes & Programs</p>
-
-<a href="Programming-with-Large-Datasets-Laboratory/" class="btn">
-Open
-</a>
-
+    <h2>🗄️ Programming with Large Datasets</h2>
+    <p>Notes & Programs</p>
+    <a href="Programming-with-Large-Datasets-Laboratory/" class="btn">Open</a>
 </div>
 
 </section>
 
-<footer>
-
-Made with ❤️ by <b>GOKZ</b>
-
+<footer style="text-align: center; padding: 40px 20px; color: #94a3b8;">
+    Made with ❤️ by <b>GOKZ</b>
 </footer>
 
 <script src="script.js"></script>
